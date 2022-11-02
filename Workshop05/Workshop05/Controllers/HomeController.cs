@@ -30,17 +30,17 @@ namespace Workshop05.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(_ctx.Advertisements);
         }
 
         [Authorize]
-        public IActionResult AddPhoto()
+        public IActionResult CreateAdvertisement()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddPhoto([FromForm] Advertisement adv, [FromForm] IFormFile photoUpload)
+        public async Task<IActionResult> CreateAdvertisement([FromForm] Advertisement adv, [FromForm] IFormFile photoUpload)
         {
             adv.UserId = _userManager.GetUserId(this.User);
 
@@ -54,12 +54,7 @@ namespace Workshop05.Controllers
 
             _ctx.Advertisements.Add(adv);
             _ctx.SaveChanges();
-            return RedirectToAction(nameof(ListPhoto));
-        }
-
-        public IActionResult ListPhoto()
-        {
-            return View(_ctx.Advertisements);
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Privacy()
