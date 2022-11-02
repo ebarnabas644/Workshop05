@@ -16,3 +16,21 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+img{
+    height: 200px;
+    width: 200px;
+}
+
+.card{
+    border: 1px solid black;
+    padding: 5px;
+    margin: 10px;
+    width: 220px;
+    border-radius: 5px;
+}
+
+.container{
+    display: inline-flex;
+    flex-wrap: wrap;
+}

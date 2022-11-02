@@ -5,15 +5,15 @@
 
 <h2>Advertisements</h2>
 
-<div>
+<div class="container">
     @{
         foreach (var item in Model)
         {
-            <div>
+            <div class="card">
                 <img src="@item.PhotoUrl">
                 <div class="card-body">
                     <h4>@item.CarModel</h4>
-                    <h5>@item.Price</h5>
+                    <h5>@item.Price €</h5>
                 </div>
             </div>
         }
