@@ -24,7 +24,7 @@ namespace Workshop05.Controllers
             _logger = logger;
             _ctx = ctx;
             _userManager = userManager;
-            serviceClient = new BlobServiceClient("");
+            serviceClient = new BlobServiceClient("DefaultEndpointsProtocol=https;AccountName=workshop05;AccountKey=viH/S0xgcMW+0YUdYk03yvyvnJD+cWbL6M5HpsJcgcNyx1OBzfhTVE33ZDZiMd+2SAdjZBYhWwc++AStj+IZAQ==;EndpointSuffix=core.windows.net");
             containerClient = serviceClient.GetBlobContainerClient("workshop05");
         }
 
